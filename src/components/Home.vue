@@ -18,8 +18,8 @@
       <input type="text" id="qn" name="qn" placeholder="Type question here..." v-model="inputText"><br>
 
       <div class="button-area">
-        <button class="button" @click="showAns()">Go!</button>
-        <button class="button" @click="retrieveAns()">Real System</button>
+        <!-- <button class="button" @click="showAns()">Go!</button> -->
+        <button class="button" @click="retrieveAns()">Go!</button>
       </div>
     </div>
     <div id="real-ans">
@@ -220,7 +220,7 @@ a:hover {
 
 }
 .button-area {
-  padding-top: 20px;
+  padding-top: 5px;
   text-align: right;
 }
 .button {
