@@ -127,21 +127,23 @@ export default {
       document.getElementById("dropdown").classList.toggle("show");
     },
     retrieveAns() {
+      this.answers=[]
       const question = {'question': this.inputText};
       axios.post("http://127.0.0.1:8000/predict", question).then(response => {this.answers = response.data.answer; 
       console.log(this.answers);
       });
 
       var x = document.getElementById("real-ans");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-        } else {
-          x.style.display = "none";
-        }
+      x.style.display = "block";
+      // if (x.style.display === "none") {
+      //   x.style.display = "block";
+      //   } else {
+      //     x.style.display = "none";
+      //   }
     },
     highlight(cont, ans) {
       //=> is a function with match as an argument, where match is RegExp(ans)  
-      return cont.replace(new RegExp(ans), match => {
+      return cont.replace(ans, match => {
             return '<mark style="background-color: #ffffd5; font-weight:bold">' + match + '</mark>';
         });
     }
